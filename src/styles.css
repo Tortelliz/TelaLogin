@@ -1,0 +1,142 @@
+/* Normalizando CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* Background preto */
+.background-black {
+    background-color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Botões */
+.btn-purple {
+    background: linear-gradient(135deg, #8A2BE2, #4B0082);
+    border: none;
+    position: relative;
+    overflow: hidden;
+    display: inline-block; /* Para que o botão não ocupe toda a largura */
+    padding: 10px 20px; /* Adicione algum preenchimento ao botão */
+    cursor: pointer; /* Altera o cursor ao passar sobre o botão */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.btn-purple:hover {
+    background: linear-gradient(135deg, #4B0082, #8A2BE2); /* Inverte as cores no hover */
+    box-shadow: 0 0 0 2px white; /* Adiciona uma sombra branca ao redor do botão */
+}
+
+/* Texto */
+.text-purple {
+    background: linear-gradient(135deg, #8A2BE2, #4B0082);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: 0.3s ease, color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+.text-purple:hover {
+    color: white; /* Muda a cor do texto para branco */
+}
+
+/* Containers */
+
+/* Login */
+.login-container {
+    background: black; /* Definindo a cor de fundo preta */
+    min-height: 100vh; /* Definir uma altura mínima igual à altura da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Adiciona a propriedade overflow-y */
+}
+
+/* Cadastro */
+.cadastro-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+/* Rótulos - Input */
+.form-label {
+    transition: all 0.3s ease; /* Adiciona uma transição suave */
+}
+
+/* Estilos para os rótulos quando o input correspondente recebe foco */
+.form-control:focus + .form-label {
+    font-size: 0.75rem; /* Diminui o tamanho do texto */
+    transform: translateY(-1rem); /* Ajusta o posicionamento para cima */
+}
+
+/* Adiciona uma borda transparente inicialmente */
+.form-control {
+    border: 4px solid transparent;
+    transition: border-color 0.3s ease; /* Adiciona uma transição suave */
+}
+
+/* Adiciona uma borda com gradiente roxo quando o input está em foco */
+.form-control:focus {
+    border: 4px solid;
+    border-image: linear-gradient(135deg, #8A2BE2, #4B0082) 1; /* Adiciona um gradiente roxo como borda */
+}
+
+/* Estilos para a parte de trás da borda, para evitar que o gradiente vaze */
+.form-control:focus::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 2px;
+    z-index: 0;
+    border: 4px solid transparent;
+    border-image: linear-gradient(135deg, #8A2BE2, #4B0082) 1;
+    transition: border-color 0.3s ease;
+}
+
+/* Formatação */
+@media screen and (max-width: 768px) {
+    /* Adaptações para telas menores */
+    .login-container {
+        padding: 20px; /* Adiciona algum espaçamento interno */
+    }
+
+/* Animações */
+
+.eye-open {
+    animation: eye-open-animation 0.3s ease forwards;
+}
+
+.eye-closed {
+    animation: eye-closed-animation 0.3s ease forwards;
+}
+
+@keyframes eye-open-animation {
+    0% {
+        transform: scaleX(1);
+    }
+    100% {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes eye-closed-animation {
+    0% {
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+}
