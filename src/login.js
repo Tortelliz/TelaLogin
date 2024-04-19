@@ -1,12 +1,12 @@
 import React from "react";
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'; // Importe o ícone de olho fechado também
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from "./assets/logo.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles.css';
 
-library.add(faEye, faEyeSlash); // Adicione o ícone de olho fechado à biblioteca de ícones
+library.add(faEye, faEyeSlash);
 
 class Login extends React.Component {
     constructor(props) {
@@ -44,8 +44,8 @@ class Login extends React.Component {
                                     />
                                     <label htmlFor="floatingPassword" className="form-label form-label-small">Senha</label>
                                     <FontAwesomeIcon 
-                                        icon={this.state.showPassword ? ["fas", "eye"] : ["fas", "eye-slash"]} // Altere o ícone com base no estado
-                                        className={`position-absolute end-2 top-50 translate-middle-y text-muted ${this.state.showPassword ? 'eye-open' : 'eye-closed'}`} // Adicione classes com base no estado
+                                        icon={this.state.showPassword ? ["fas", "eye"] : ["fas", "eye-slash"]}
+                                        className={`position-absolute end-2 top-50 translate-middle-y text-muted ${this.state.showPassword ? 'eye-open' : 'eye-closed'}`}
                                         style={{cursor: 'pointer', fontSize: '1.50em', right: '10px'}}
                                         onClick={this.togglePasswordVisibility}
                                     />
